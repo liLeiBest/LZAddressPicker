@@ -1,0 +1,6 @@
+framework module LZAddressPicker {
+  umbrella header "LZAddressPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

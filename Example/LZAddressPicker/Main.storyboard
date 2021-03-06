@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="dC1-Yc-e4v">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="9vb-rk-QdV">
+            <objects>
+                <viewController definesPresentationContext="YES" id="dC1-Yc-e4v" customClass="LZViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qzx-bh-jjK"/>
+                        <viewControllerLayoutGuide type="bottom" id="H3m-Md-w4o"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ofR-wu-3eJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zlD-P6-DAa">
+                                <rect key="frame" x="20" y="57" width="335" height="34"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="adPickerDidClick:" destination="dC1-Yc-e4v" eventType="touchUpInside" id="Qk1-3t-edv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvU-O6-j6B">
+                                <rect key="frame" x="20" y="20" width="335" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.16078431369999999" green="0.62352941179999999" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bvU-O6-j6B" firstAttribute="top" secondItem="qzx-bh-jjK" secondAttribute="bottom" constant="20" id="9cg-JX-Zcm"/>
+                            <constraint firstItem="zlD-P6-DAa" firstAttribute="leading" secondItem="ofR-wu-3eJ" secondAttribute="leading" constant="20" id="IMX-8t-kZd"/>
+                            <constraint firstAttribute="trailing" secondItem="bvU-O6-j6B" secondAttribute="trailing" constant="20" id="NDz-YB-WoM"/>
+                            <constraint firstItem="zlD-P6-DAa" firstAttribute="top" secondItem="bvU-O6-j6B" secondAttribute="bottom" constant="20" id="gHx-Dz-dja"/>
+                            <constraint firstItem="bvU-O6-j6B" firstAttribute="leading" secondItem="ofR-wu-3eJ" secondAttribute="leading" constant="20" id="h2v-3w-69e"/>
+                            <constraint firstItem="zlD-P6-DAa" firstAttribute="centerX" secondItem="ofR-wu-3eJ" secondAttribute="centerX" id="jib-3s-7Wr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="bvU-O6-j6B" id="Cnu-e2-82Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="STX-B7-z0E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="433"/>
+        </scene>
+    </scenes>
+</document>

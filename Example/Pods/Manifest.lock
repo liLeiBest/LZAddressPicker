@@ -1,0 +1,51 @@
+PODS:
+  - LZAddressPicker (0.1.0):
+    - LZDependencyToolkit
+  - LZDependencyToolkit (2.2.0):
+    - LZDependencyToolkit/Category (= 2.2.0)
+    - LZDependencyToolkit/Define (= 2.2.0)
+    - LZDependencyToolkit/Object (= 2.2.0)
+    - LZDependencyToolkit/Struct (= 2.2.0)
+  - LZDependencyToolkit/Category (2.2.0):
+    - MJRefresh
+  - LZDependencyToolkit/Define (2.2.0)
+  - LZDependencyToolkit/Object (2.2.0):
+    - LZDependencyToolkit/Object/Timer (= 2.2.0)
+    - LZDependencyToolkit/Object/Transitioning (= 2.2.0)
+  - LZDependencyToolkit/Object/Timer (2.2.0)
+  - LZDependencyToolkit/Object/Transitioning (2.2.0)
+  - LZDependencyToolkit/Struct (2.2.0):
+    - LZDependencyToolkit/Struct/AppUnit (= 2.2.0)
+    - LZDependencyToolkit/Struct/CryptoUnit (= 2.2.0)
+    - LZDependencyToolkit/Struct/DeviceUnit (= 2.2.0)
+    - LZDependencyToolkit/Struct/QuickUnit (= 2.2.0)
+  - LZDependencyToolkit/Struct/AppUnit (2.2.0)
+  - LZDependencyToolkit/Struct/CryptoUnit (2.2.0)
+  - LZDependencyToolkit/Struct/DeviceUnit (2.2.0)
+  - LZDependencyToolkit/Struct/QuickUnit (2.2.0)
+  - MJExtension (3.2.4)
+  - MJRefresh (3.5.0)
+
+DEPENDENCIES:
+  - LZAddressPicker (from `../`)
+  - MJExtension
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - LZDependencyToolkit
+    - MJExtension
+    - MJRefresh
+
+EXTERNAL SOURCES:
+  LZAddressPicker:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LZAddressPicker: d6e39ff2981a49d6e2c587286d29da54530ac05c
+  LZDependencyToolkit: bfb55bd84a994ca75af5d6de4f0f9f62015b67e9
+  MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+
+PODFILE CHECKSUM: 3d7b88a394d0310db0950ef814da5b451bca0a59
+
+COCOAPODS: 1.10.1

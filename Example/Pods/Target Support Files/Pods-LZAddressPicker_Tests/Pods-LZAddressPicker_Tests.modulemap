@@ -1,0 +1,6 @@
+framework module Pods_LZAddressPicker_Tests {
+  umbrella header "Pods-LZAddressPicker_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
