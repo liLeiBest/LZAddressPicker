@@ -24,9 +24,6 @@
 // MARK: - Initialization
 - (instancetype)initWithCoder:(NSCoder *)coder {
     if (self = [super initWithCoder:coder]) {
-     
-        self.modalPresentationStyle = UIModalPresentationCustom;
-        self.transitioningDelegate = self;
         self.configuration = [LZAddressPickerConfigurationModel defaultConfiguration];
     }
     return self;
@@ -40,6 +37,14 @@
 
 - (void)dealloc {
     NSLog(@"%s", __PRETTY_FUNCTION__);
+}
+
+- (UIModalPresentationStyle)modalPresentationStyle {
+    return UIModalPresentationCustom;
+}
+
+- (id<UIViewControllerTransitioningDelegate>)transitioningDelegate {
+    return self;
 }
 
 // MARK: - Public
