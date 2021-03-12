@@ -1,6 +1,6 @@
 {
   "name": "LZAddressPicker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "LZAddressPicker.",
   "description": "地址选择器:\n1.支持外观配置",
   "homepage": "https://github.com/liLeiBest/LZAddressPicker",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/liLeiBest/LZAddressPicker.git",
-    "tag": "0.1.0"
+    "tag": "0.1.1"
   },
   "social_media_url": "https://github.com/liLeiBest",
   "platforms": {

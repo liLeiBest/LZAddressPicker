@@ -1,5 +1,5 @@
 PODS:
-  - LZAddressPicker (0.1.0):
+  - LZAddressPicker (0.1.1):
     - LZDependencyToolkit
   - LZDependencyToolkit (2.2.0):
     - LZDependencyToolkit/Category (= 2.2.0)
@@ -41,7 +41,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LZAddressPicker: d6e39ff2981a49d6e2c587286d29da54530ac05c
+  LZAddressPicker: c8df25c82bfb0448e3e6659362a696ce091f85af
   LZDependencyToolkit: bfb55bd84a994ca75af5d6de4f0f9f62015b67e9
   MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
