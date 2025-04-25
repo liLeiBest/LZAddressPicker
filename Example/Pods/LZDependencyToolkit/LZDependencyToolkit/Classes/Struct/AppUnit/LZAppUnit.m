@@ -58,19 +58,33 @@ NSString * _build(void) {
     return build;
 }
 
-/** compare build version */
-BOOL _compareBuild(NSString *lastestBuild) {
+/** Digital comparison */
+NSComparisonResult _compareNumResult(NSString *num1, NSString *num2) {
+    return [num1 compare:num2 options:NSNumericSearch];
+}
 
-    NSComparisonResult comparisonResult = [_build() compare:lastestBuild options:NSNumericSearch];
-    if (comparisonResult == NSOrderedDescending) return NO;
+/** compare build version */
+BOOL _compareBuild(NSString *build) {
+    if (_compareNumResult(_build(), build) == NSOrderedDescending) return NO;
     return YES;
 }
 
-/** compare version */
-BOOL _compareVersion(NSString *lastestVersion) {
+/** compare build version */
+BOOL _compareBuild_gt(NSString *build) {
+    if (_compareNumResult(_build(), build) == NSOrderedAscending) return YES;
+    return NO;
+}
 
-    NSComparisonResult comparisonResult = [_version() compare:lastestVersion options:NSNumericSearch];
-    if (comparisonResult == NSOrderedDescending) return NO;
+
+/** compare version */
+BOOL _compareVersion(NSString *version) {
+    if (_compareNumResult(_version(), version) == NSOrderedDescending) return NO;
+    return YES;;
+}
+
+/** compare version */
+BOOL _compareVersion_gt(NSString *version) {
+    if (_compareNumResult(_version(), version) == NSOrderedAscending) return NO;
     return YES;;
 }
 
@@ -142,6 +156,9 @@ NSString * _searchSubDir(NSSearchPathDirectory searchPathDir, NSString *subPath)
 BOOL _createDir(NSString *dirPath) {
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:dirPath]) {
+        return YES;
+    }
     NSError *error;
     BOOL successful = [fileManager createDirectoryAtPath:dirPath
                              withIntermediateDirectories:YES
@@ -172,16 +189,47 @@ BOOL _createDocumentSubDir(NSString *subPath, NSString **fullPath) {
 }
 
 // MARK: Other
+UIWindow * _keyWindow(void) {
+    if ([[[UIApplication sharedApplication] delegate] window]) {
+        return [[[UIApplication sharedApplication] delegate] window];
+    } else {
+        if (@available(iOS 13.0, *)) {
+            
+            NSArray *array = [[[UIApplication sharedApplication] connectedScenes] allObjects];
+            UIWindowScene *windowScene = (UIWindowScene *)array[0];
+            /**
+             如果是普通App开发，可以使用
+             SceneDelegate * delegate = (SceneDelegate *)windowScene.delegate;
+             UIWindow * mainWindow = delegate.window;
+             */
+            // 由于在sdk开发中，引入不了SceneDelegate的头文件，所以需要用kvc获取宿主app的window.
+            UIWindow* mainWindow = [windowScene valueForKeyPath:@"delegate.window"];
+            if (mainWindow) {
+                return mainWindow;
+            } else {
+                if (@available(iOS 15.0, *)) {
+                    mainWindow = windowScene.keyWindow;
+                } else {
+                    mainWindow = [windowScene.windows lastObject];
+                }
+                if (mainWindow) {
+                    return mainWindow;
+                } else {
+                    return [UIApplication sharedApplication].windows.lastObject;
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+            return [UIApplication sharedApplication].keyWindow;
+        }
+    }
+}
+
 UIEdgeInsets _safeAreaInsets(void) {
     
     UIEdgeInsets insets = UIEdgeInsetsZero;
     if (@available(iOS 11.0, *)) {
-        
-        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
-        if (nil == mainWindow) {
-            mainWindow = [UIApplication sharedApplication].keyWindow;
-        }
-        insets = mainWindow.safeAreaInsets;
+        insets = _keyWindow().safeAreaInsets;
     }
     return insets;
 }
@@ -191,17 +239,17 @@ UIViewController * _activityViewController(void) {
     
     UIViewController *activityViewController = nil;
     // 获取当前主窗口
-    UIWindow *currentWindow = [UIApplication sharedApplication].keyWindow;
-    if (currentWindow.windowLevel != UIWindowLevelNormal) {
-        
-        NSArray *allWindows = [UIApplication sharedApplication].windows;
-        for (UIWindow *tempWindow in allWindows) {
-            if (tempWindow.windowLevel == UIWindowLevelNormal) {
-                currentWindow = tempWindow;
-                break;
-            }
-        }
-    }
+    UIWindow *currentWindow = _keyWindow();
+//    if (currentWindow.windowLevel != UIWindowLevelNormal) {
+//
+//        NSArray *allWindows = [UIApplication sharedApplication].windows;
+//        for (UIWindow *tempWindow in allWindows) {
+//            if (tempWindow.windowLevel == UIWindowLevelNormal) {
+//                currentWindow = tempWindow;
+//                break;
+//            }
+//        }
+//    }
     // 获取活动的视图控制器
     NSArray *currentWinViews = [currentWindow subviews];
     if (currentWinViews.count > 0) {
@@ -225,11 +273,27 @@ UIViewController * _activityViewController(void) {
     return activityViewController;
 }
 
+/** 打开URL */
+BOOL _openURL(NSURL *URL) {
+    if (nil == URL || NO == [URL isKindOfClass:[NSURL class]]) {
+        return NO;
+    }
+    if ([[UIApplication sharedApplication] canOpenURL:URL]) {
+        if (@available(iOS 10, *)) {
+            [[UIApplication sharedApplication] openURL:URL options:@{UIApplicationOpenURLOptionUniversalLinksOnly : @(NO)} completionHandler:^(BOOL success) {
+            }];
+        } else {
+            [[UIApplication sharedApplication] openURL:URL];
+        }
+        return YES;
+    }
+    return NO;
+}
+
 /** Forced Exit App */
 void _exitApp(void) {
     
-    UIApplication *app = [UIApplication sharedApplication];
-    UIWindow *window = app.keyWindow;
+    UIWindow *window = _keyWindow();
     [UIView animateWithDuration:1.0f animations:^{
         window.alpha = 0;
         window.frame = CGRectMake(window.bounds.size.width * 0.5, window.bounds.size.height * 0.5, 0, 0);
@@ -247,7 +311,9 @@ struct LZAppUnit_type LZAppUnit = {
     .build = _build,
     
     .compareBuild = _compareBuild,
+    .compareBuild_gt = _compareBuild_gt,
     .compareVersion = _compareVersion,
+    .compareVersion_gt = _compareVersion_gt,
     
     .cacheDir = _cacheDir,
     .documentDir = _documentDir,
@@ -259,7 +325,9 @@ struct LZAppUnit_type LZAppUnit = {
     .createCacheSubDir = _createCacheSubDir,
     .createDocumentSubDir = _createDocumentSubDir,
     
+    .keyWindow = _keyWindow,
     .safeAreaInsets = _safeAreaInsets,
     .activityViewController = _activityViewController,
+    .openURL = _openURL,
     .exit = _exitApp,
 };

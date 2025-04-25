@@ -79,6 +79,7 @@ typedef NS_ENUM(NSInteger, LZDeviceGeneration) {
     LZDeviceGenerationiPhone6s_plus,
     LZDeviceGenerationiPhoneSE1st,
     LZDeviceGenerationiPhoneSE2nd,
+    LZDeviceGenerationiPhoneSE3rd,
     LZDeviceGenerationiPhone7,
     LZDeviceGenerationiPhone7_plus,
     LZDeviceGenerationiPhone8,
@@ -94,6 +95,23 @@ typedef NS_ENUM(NSInteger, LZDeviceGeneration) {
     LZDeviceGenerationiPhone12,
     LZDeviceGenerationiPhone12_pro,
     LZDeviceGenerationiPhone12_pro_max,
+    LZDeviceGenerationiPhone13_mini,
+    LZDeviceGenerationiPhone13,
+    LZDeviceGenerationiPhone13_pro,
+    LZDeviceGenerationiPhone13_pro_max,
+    LZDeviceGenerationiPhone14,
+    LZDeviceGenerationiPhone14_plus,
+    LZDeviceGenerationiPhone14_pro,
+    LZDeviceGenerationiPhone14_pro_max,
+    LZDeviceGenerationiPhone15,
+    LZDeviceGenerationiPhone15_plus,
+    LZDeviceGenerationiPhone15_pro,
+    LZDeviceGenerationiPhone15_pro_max,
+    LZDeviceGenerationiPhone16,
+    LZDeviceGenerationiPhone16_plus,
+    LZDeviceGenerationiPhone16_pro,
+    LZDeviceGenerationiPhone16_pro_max,
+    LZDeviceGenerationiPhone16e,
     // iPod 型号
     LZDeviceGenerationiPodtouch1st,
     LZDeviceGenerationiPodtouch2nd,
@@ -109,8 +127,12 @@ typedef NS_ENUM(NSInteger, LZDeviceGeneration) {
     LZDeviceGenerationiWatch_series3,
 	LZDeviceGenerationiWatch_series4,
     LZDeviceGenerationiWatch_series5,
-    LZDeviceGenerationiWatch_SE,
+    LZDeviceGenerationiWatch_SE_1st,
+    LZDeviceGenerationiWatch_SE_2nd,
     LZDeviceGenerationiWatch_series6,
+    LZDeviceGenerationiWatch_series7,
+    LZDeviceGenerationiWatch_series8,
+    LZDeviceGenerationiWatch_ultra_1st,
     // iPad 型号
     LZDeviceGenerationiPad1st,
     LZDeviceGenerationiPad2nd,
@@ -120,33 +142,135 @@ typedef NS_ENUM(NSInteger, LZDeviceGeneration) {
 	LZDeviceGenerationiPad6th,
     LZDeviceGenerationiPad7th,
     LZDeviceGenerationiPad8th,
+    LZDeviceGenerationiPad9th,
+    LZDeviceGenerationiPad10th,
     LZDeviceGenerationiPad_air1st,
     LZDeviceGenerationiPad_air2nd,
 	LZDeviceGenerationiPad_air3rd,
     LZDeviceGenerationiPad_air4th,
+    LZDeviceGenerationiPad_air5th,
     LZDeviceGenerationiPad_pro_inch_12__9_1st,
     LZDeviceGenerationiPad_pro_inch_12__9_2nd,
     LZDeviceGenerationiPad_pro_inch_12__9_3rd,
     LZDeviceGenerationiPad_pro_inch_12__9_4th,
+    LZDeviceGenerationiPad_pro_inch_12__9_5th,
     LZDeviceGenerationiPad_pro_inch_9__7,
     LZDeviceGenerationiPad_pro_inch_10__5,
     LZDeviceGenerationiPad_pro_inch_11_1st,
     LZDeviceGenerationiPad_pro_inch_11_2nd,
+    LZDeviceGenerationiPad_pro_inch_11_3rd,
     LZDeviceGenerationiPad_mini1st,
     LZDeviceGenerationiPad_mini2nd,
     LZDeviceGenerationiPad_mini3rd,
     LZDeviceGenerationiPad_mini4th,
 	LZDeviceGenerationiPad_mini5th,
+    LZDeviceGenerationiPad_mini6th,
+    // HomePod 型号
+    LZDeviceGenerationiHomePod_1st,
+    LZDeviceGenerationiHomePod_mini1st,
     // iTV 型号
     LZDeviceGenerationiTV1st,
     LZDeviceGenerationiTV2nd,
     LZDeviceGenerationiTV3rd,
     LZDeviceGenerationiTV4th,
-    LZDeviceGenerationiTV4K,
+    LZDeviceGenerationiTV4K_1st,
+    LZDeviceGenerationiTV4K_2nd,
     // AirPods 型号
-    LZDeviceGenerationAirPods1st,
-    LZDeviceGenerationAirPods2nd,
-    LZDeviceGenerationAirPods_pro,
+    LZDeviceGenerationAirPods_1st,
+    LZDeviceGenerationAirPods_2nd,
+    LZDeviceGenerationAirPods_3rd,
+    LZDeviceGenerationAirPods_pro_1st,
+    LZDeviceGenerationAirPods_pro_2nd,
+    LZDeviceGenerationAirPods_max,
+    // AirTag 型号
+    LZDeviceGenerationAirTag_1st,
+    // Mac 型号
+    LZDeviceGenerationiMac_Y2009,
+    LZDeviceGenerationiMac_inch_21__5_Y2010,
+    LZDeviceGenerationiMac_inch_27_Y2010,
+    LZDeviceGenerationiMac_inch_21__5_Y2011,
+    LZDeviceGenerationiMac_inch_27_Y2011,
+    LZDeviceGenerationiMac_inch_21__5_Y2012,
+    LZDeviceGenerationiMac_inch_27_Y2012,
+    LZDeviceGenerationiMac_inch_21__5_Y2013,
+    LZDeviceGenerationiMac_inch_27_Y2013,
+    LZDeviceGenerationiMac_inch_21__5_Y2014,
+    LZDeviceGenerationiMac_inch_27_5K_Y2014,
+    LZDeviceGenerationiMac_inch_21__5_Y2015,
+    LZDeviceGenerationiMac_inch_21__5_4K_Y2015,
+    LZDeviceGenerationiMac_inch_27_5K_Y2015,
+    LZDeviceGenerationiMac_inch_21__5_Y2017,
+    LZDeviceGenerationiMac_inch_21__5_4K_Y2017,
+    LZDeviceGenerationiMac_inch_27_5K_Y2017,
+    LZDeviceGenerationiMac_pro_inch_27_5K_Y2017,
+    LZDeviceGenerationiMac_inch_21__5_4K_Y2019,
+    LZDeviceGenerationiMac_inch_27_5K_Y2019,
+    LZDeviceGenerationiMac_inch_27_5K_Y2020,
+    LZDeviceGenerationiMac_inch_24_m1_Y2021,
+    LZDeviceGenerationiMac_inch_24_m3_Y2023,
+    LZDeviceGenerationiMac_inch_24_m4_Y2024,
+    
+    LZDeviceGenerationMacBook_inch_13_Y2009,
+    LZDeviceGenerationMacBook_inch_13_Y2010,
+    LZDeviceGenerationMacBook_inch_12_Y2015,
+    LZDeviceGenerationMacBook_inch_12_Y2016,
+    LZDeviceGenerationMacBook_inch_12_Y2017,
+    
+    LZDeviceGenerationMacBook_air_inch_13_Y2009,
+    LZDeviceGenerationMacBook_air_inch_11_Y2010,
+    LZDeviceGenerationMacBook_air_inch_13_Y2010,
+    LZDeviceGenerationMacBook_air_inch_11_Y2011,
+    LZDeviceGenerationMacBook_air_inch_13_Y2011,
+    LZDeviceGenerationMacBook_air_inch_11_Y2012,
+    LZDeviceGenerationMacBook_air_inch_13_Y2012,
+    LZDeviceGenerationMacBook_air_inch_11_Y2013,
+    LZDeviceGenerationMacBook_air_inch_13_Y2013,
+    LZDeviceGenerationMacBook_air_inch_11_Y2014,
+    LZDeviceGenerationMacBook_air_inch_13_Y2014,
+    LZDeviceGenerationMacBook_air_inch_11_Y2015,
+    LZDeviceGenerationMacBook_air_inch_13_Y2015,
+    LZDeviceGenerationMacBook_air_inch_13_Y2017,
+    LZDeviceGenerationMacBook_air_inch_13_Y2018,
+    LZDeviceGenerationMacBook_air_inch_13_Y2019,
+    LZDeviceGenerationMacBook_air_inch_13_Y2020,
+    LZDeviceGenerationMacBook_air_inch_13_m1_Y2020,
+    LZDeviceGenerationMacBook_air_inch_13_m2_Y2022,
+    LZDeviceGenerationMacBook_air_inch_15_m2_Y2023,
+    LZDeviceGenerationMacBook_air_inch_13_m3_Y2024,
+    LZDeviceGenerationMacBook_air_inch_15_m3_Y2024,
+    LZDeviceGenerationMacBook_air_inch_13_m4_Y2025,
+    LZDeviceGenerationMacBook_air_inch_15_m4_Y2025,
+    
+    LZDeviceGenerationMac_pro_m1_inch_13_1st,
+    LZDeviceGenerationMac_pro_m1_inch_14_1st,
+    LZDeviceGenerationMac_pro_m1_inch_16_1st,
+    
+    LZDeviceGenerationMacMini_Y2009,
+    LZDeviceGenerationMacMini_Y2010,
+    LZDeviceGenerationMacMini_Y2011,
+    LZDeviceGenerationMacMini_Y2012,
+    LZDeviceGenerationMacMini_Y2014,
+    LZDeviceGenerationMacMini_Y2018,
+    LZDeviceGenerationMacMini_Y2020,
+    LZDeviceGenerationMacMini_m1_Y2020,
+    LZDeviceGenerationMacMini_m2_Y2023,
+    LZDeviceGenerationMacMini_m2_pro_Y2023,
+    LZDeviceGenerationMacMini_m4_Y2024,
+    
+    LZDeviceGenerationMacStudio_m1_ultra_Y2022,
+    LZDeviceGenerationMacStudio_m1_max_Y2022,
+    LZDeviceGenerationMacStudio_m2_ultra_Y2023,
+    LZDeviceGenerationMacStudio_m2_max_Y2023,
+    LZDeviceGenerationMacStudio_m3_ultra_Y2025,
+    LZDeviceGenerationMacStudio_m4_max_Y2025,
+    
+    LZDeviceGenerationMacPro_Y2009,
+    LZDeviceGenerationMacPro_Y2010,
+    LZDeviceGenerationMacPro_Y2012,
+    LZDeviceGenerationMacPro_Y2013,
+    LZDeviceGenerationMacPro_Y2019,
+    LZDeviceGenerationMacPro_Y2023,
+    
     // 未知
     LZDeviceGenerationUnspecified,
 };
@@ -162,6 +286,9 @@ struct LZDeviceUnit_type {
     
     /// 设备 UUID
     NSString * (* UUID)(void);
+    
+    /// 创建 UUID
+    NSString * (* uuid_create)(void);
     
     /// 设备别名，或者用户定义的名称
     NSString * (* name)(void);
@@ -185,25 +312,37 @@ struct LZDeviceUnit_type {
     LZDeviceBatteryState (* batteryState)(void);
     /// 电池状态描述
     NSString * (* batteryState_desc)(void);
-    
     /// 电池电量,0 .. 1.0. -1.0 if LZDeviceBatteryStateUnknown
     float (* batteryLevel)(void);
     /// 电池电量描述,百分比
     NSString * (* batteryLevel_desc)(void);
     
     /// 总磁盘空间,单位:Byte
-    long long (* diskTotalSpace)(void);
+    int64_t (* diskTotalSpace)(void);
     /// 总磁盘空间描述,单位:G
     NSString * (* diskTotalSpace_desc)(void);
     /// 剩余磁盘空间,单位:Byte
-    long long (* diskFreeSpace)(void);
+    int64_t (* diskFreeSpace)(void);
     /// 剩余磁盘空间描述,单位:G
     NSString * (* diskFreeSpace_desc)(void);
-    
     /// 已使用磁盘空间,单位:Byte
-    long long (* diskUsedSpace)(void);
+    int64_t (* diskUsedSpace)(void);
     /// 已使用磁盘空间描述,单位:G
     NSString * (* diskUsedSpace_desc)(void);
+    
+    /// 总内存
+    UInt64 (* memoryTotalSpace)(void);
+    /// 总内存描述,单位:G
+    NSString * (* memoryTotalSpace_desc)(void);
+    /// 可用内存
+    UInt64 (* memoryAvaiableSpace)(void);
+    /// 可用内存描述,单位:M
+    NSString * (* memoryAvaiableSpace_desc)(void);
+    /// 内存使用
+    UInt64 (* memoryUsedSpace)(void);
+    /// 内存使用描述,单位:M
+    NSString * (* memoryUsedSpace_desc)(void);
+    
     /// CPU 核数
     NSString * (* CPUCount)(void);
     /// CPU 使用率
@@ -265,6 +404,8 @@ struct LZDeviceUnit_type {
     
     /// 运营商名称 e.g 中国联通
     NSString * (* carrierName)(void);
+    /// 获取当前网速，上行：upSpeed；下行：downSpeed
+    NSDictionary * (* currentNetSpeed)(void);
 };
 
 FOUNDATION_EXTERN struct LZDeviceUnit_type LZDeviceInfo;

@@ -1,37 +1,43 @@
 PODS:
-  - LZAddressPicker (0.1.1):
+  - LZAddressPicker (1.0.0):
     - LZDependencyToolkit
-  - LZDependencyToolkit (2.2.0):
-    - LZDependencyToolkit/Category (= 2.2.0)
-    - LZDependencyToolkit/Define (= 2.2.0)
-    - LZDependencyToolkit/Object (= 2.2.0)
-    - LZDependencyToolkit/Struct (= 2.2.0)
-  - LZDependencyToolkit/Category (2.2.0):
+  - LZDependencyToolkit (3.5.1):
+    - LZDependencyToolkit/Category (= 3.5.1)
+    - LZDependencyToolkit/Define (= 3.5.1)
+    - LZDependencyToolkit/Object (= 3.5.1)
+    - LZDependencyToolkit/Struct (= 3.5.1)
+  - LZDependencyToolkit/Category (3.5.1):
     - MJRefresh
-  - LZDependencyToolkit/Define (2.2.0)
-  - LZDependencyToolkit/Object (2.2.0):
-    - LZDependencyToolkit/Object/Timer (= 2.2.0)
-    - LZDependencyToolkit/Object/Transitioning (= 2.2.0)
-  - LZDependencyToolkit/Object/Timer (2.2.0)
-  - LZDependencyToolkit/Object/Transitioning (2.2.0)
-  - LZDependencyToolkit/Struct (2.2.0):
-    - LZDependencyToolkit/Struct/AppUnit (= 2.2.0)
-    - LZDependencyToolkit/Struct/CryptoUnit (= 2.2.0)
-    - LZDependencyToolkit/Struct/DeviceUnit (= 2.2.0)
-    - LZDependencyToolkit/Struct/QuickUnit (= 2.2.0)
-  - LZDependencyToolkit/Struct/AppUnit (2.2.0)
-  - LZDependencyToolkit/Struct/CryptoUnit (2.2.0)
-  - LZDependencyToolkit/Struct/DeviceUnit (2.2.0)
-  - LZDependencyToolkit/Struct/QuickUnit (2.2.0)
-  - MJExtension (3.2.4)
-  - MJRefresh (3.5.0)
+  - LZDependencyToolkit/Define (3.5.1)
+  - LZDependencyToolkit/Object (3.5.1):
+    - LZDependencyToolkit/Object/Proxy (= 3.5.1)
+    - LZDependencyToolkit/Object/Thread (= 3.5.1)
+    - LZDependencyToolkit/Object/Timer (= 3.5.1)
+    - LZDependencyToolkit/Object/Transitioning (= 3.5.1)
+  - LZDependencyToolkit/Object/Proxy (3.5.1)
+  - LZDependencyToolkit/Object/Thread (3.5.1)
+  - LZDependencyToolkit/Object/Timer (3.5.1)
+  - LZDependencyToolkit/Object/Transitioning (3.5.1)
+  - LZDependencyToolkit/Struct (3.5.1):
+    - LZDependencyToolkit/Struct/AppUnit (= 3.5.1)
+    - LZDependencyToolkit/Struct/CryptoUnit (= 3.5.1)
+    - LZDependencyToolkit/Struct/DeviceUnit (= 3.5.1)
+    - LZDependencyToolkit/Struct/QuickUnit (= 3.5.1)
+  - LZDependencyToolkit/Struct/AppUnit (3.5.1)
+  - LZDependencyToolkit/Struct/CryptoUnit (3.5.1)
+  - LZDependencyToolkit/Struct/DeviceUnit (3.5.1):
+    - LZDependencyToolkit/Struct/AppUnit
+  - LZDependencyToolkit/Struct/QuickUnit (3.5.1):
+    - LZDependencyToolkit/Struct/AppUnit
+  - MJExtension (3.4.2)
+  - MJRefresh (3.7.9)
 
 DEPENDENCIES:
   - LZAddressPicker (from `../`)
   - MJExtension
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - LZDependencyToolkit
     - MJExtension
     - MJRefresh
@@ -41,11 +47,11 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LZAddressPicker: c8df25c82bfb0448e3e6659362a696ce091f85af
-  LZDependencyToolkit: bfb55bd84a994ca75af5d6de4f0f9f62015b67e9
-  MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
-  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  LZAddressPicker: 3b6289e982312cf2e8b767b24a09b07d7b51e5d9
+  LZDependencyToolkit: 54821eeea70667369fc47b54b60b09299c7dcb91
+  MJExtension: e97d164cb411aa9795cf576093a1fa208b4a8dd8
+  MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
 
-PODFILE CHECKSUM: 3d7b88a394d0310db0950ef814da5b451bca0a59
+PODFILE CHECKSUM: d4c6bc8d683af82e88c26489c79492277c1ad8a7
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.16.2

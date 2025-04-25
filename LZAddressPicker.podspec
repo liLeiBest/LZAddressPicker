@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LZAddressPicker'
-  s.version          = '0.1.1'
+  s.version          = '1.0.0'
   s.summary          = 'LZAddressPicker.'
   s.description      = <<-DESC
   地址选择器:
@@ -12,12 +12,8 @@ Pod::Spec.new do |s|
   s.author           = { 'lilei' => 'lilei_hapy@163.com' }
   s.source           = { :git => 'https://github.com/liLeiBest/LZAddressPicker.git', :tag => s.version.to_s }
   s.social_media_url = 'https://github.com/liLeiBest'
-
-  s.ios.deployment_target = '9.0'
-  s.frameworks                 = 'UIKit', 'Foundation'
-  s.source_files = 'LZAddressPicker/Classes/**/*'
   
-  s.ios.deployment_target   = '9.0'
+  s.ios.deployment_target   = '13.0'
   s.frameworks              = 'Foundation','UIKit'
   s.source_files            = 'LZAddressPicker/Classes/**/*'
   s.public_header_files     = 'LZAddressPicker/Classes/**/*.h'
